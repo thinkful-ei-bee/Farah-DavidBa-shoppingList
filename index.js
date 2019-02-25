@@ -27,7 +27,7 @@ function generateItemElement(item){
 }
 
 function generateShoppingItemsString(shoppingList) {
-  console.log('Shopping list generated');
+  // console.log('Shopping list generated');
   
   const items = shoppingList.map((item, index) => generateItemElement(item, index));
 
@@ -40,28 +40,30 @@ function renderShoppingList() {
   const shoppingListsItemsString = generateShoppingItemsString(STORE);
   
   $('.js-shopping-list').html(shoppingListsItemsString);
-  console.log('`renderShoppingList` ran');
+  // console.log('`renderShoppingList` ran');
 }
 
 function handleNewItemSubmit() {
   // this function will be responsible for when users add a new shopping list item
   $('#js-shopping-list-form').submit(event => {
     event.preventDefault();
-    
+    const newItemName = $('.js-shopping-list-entry').val();
+    console.log(newItemName);
+    $('.js-shopping-list-entry').val('');
   });
-  console.log('`handleNewItemSubmit`');
+  // console.log('`handleNewItemSubmit`');
 }
 
 function handleItemCheckClicked() {
   // this function will be responsible for when users click the "check" button on a shopping list item
 
-  console.log('`handleItemCheckClicked` ran');
+ //  console.log('`handleItemCheckClicked` ran');
 }
 
 function handleDeleteItemClicked() {
   // this function will be responsible for when users wnat to delete a shopping list 
 
-  console.log('`handleDeleteItemClicked` ran');
+ // console.log('`handleDeleteItemClicked` ran');
 }
 
 
