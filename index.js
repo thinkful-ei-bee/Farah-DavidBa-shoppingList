@@ -10,12 +10,12 @@ const STORE = [
   {name: 'bread', checked: false}
 ];
 
-function generateItemElement(item, itemIndex, template){
+function generateItemElement(item){
   return `
     <li data-item-id="${item.id}"> 
-      <span class="shopping-item js-shopping-item ${item.checked ? 'shopping-item_checked' : ''}">${item.name}</span>
+      <span class="shopping-item js-shopping-item ${item.checked ? 'shopping-item__checked' : ''}">${item.name}</span>
       <div class='shopping-item-controls'>
-        <buttom class='shopping-item-toggle js-item-toggle'>
+        <button class='shopping-item-toggle js-item-toggle'>
           <span class='button-label'>check</span>
         </button>
         <button class='shopping-item-delete js-item-delete'>
