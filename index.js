@@ -10,9 +10,20 @@ const STORE = [
   {name: 'bread', checked: false}
 ];
 
+function generateShoppingItemsString() {
+  console.log('Shopping list generated');
+  return `
+  <li>apples</li>
+  <li>oranges</li>
+  <li>milk</li>
+  <li>bread</li>
+  `;
+}
+
 function renderShoppingList() {
   // this function will be responsible for rendering the shopping list in the DOM
-
+  const shoppingListsItemsString = generateShoppingItemsString(STORE);
+  $('.js-shopping-list').html(shoppingListsItemsString);
   console.log('`renderShoppingList` ran');
 }
 
