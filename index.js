@@ -31,7 +31,7 @@ function handleItemCheckClicked() {
 function handleDeleteItemClicked() {
   // this function will be responsible for when users wnat to delete a shopping list 
 
-  console.log('`handleDeleteItchemClicked` ran');
+  console.log('`handleDeleteItemClicked` ran');
 }
 
 
