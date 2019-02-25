@@ -45,7 +45,10 @@ function renderShoppingList() {
 
 function handleNewItemSubmit() {
   // this function will be responsible for when users add a new shopping list item
-
+  $('#js-shopping-list-form').submit(event => {
+    event.preventDefault();
+    
+  });
   console.log('`handleNewItemSubmit`');
 }
 
@@ -60,6 +63,7 @@ function handleDeleteItemClicked() {
 
   console.log('`handleDeleteItemClicked` ran');
 }
+
 
 
 // callback function 
