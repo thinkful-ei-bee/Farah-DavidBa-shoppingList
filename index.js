@@ -4,10 +4,10 @@
 
 // STORE is responsible for storing the underlying data that our app needs to keep track of in order to work. 
 const STORE = [
-  {name: 'apples', checked: false},
-  {name: 'oranges', checked: false},
-  {name: 'milk', checked: true},
-  {name: 'bread', checked: false}
+  {id: cuid(), name: 'apples', checked: false},
+  {id: cuid(), name: 'oranges', checked: false},
+  {id: cuid(), name: 'milk', checked: true},
+  {id: cuid(), name: 'bread', checked: false}
 ];
 
 function generateItemElement(item){
@@ -43,6 +43,11 @@ function renderShoppingList() {
   // console.log('`renderShoppingList` ran');
 }
 
+function addItemToShoppingList(itemName){
+  console.log(`Adding '${itemName}' to shopping list`);
+  STORE.push({name: itemName, checked: false});
+}
+
 function handleNewItemSubmit() {
   // this function will be responsible for when users add a new shopping list item
   $('#js-shopping-list-form').submit(event => {
@@ -50,6 +55,8 @@ function handleNewItemSubmit() {
     const newItemName = $('.js-shopping-list-entry').val();
     console.log(newItemName);
     $('.js-shopping-list-entry').val('');
+    addItemToShoppingList(newItemName);
+    renderShoppingList();
   });
   // console.log('`handleNewItemSubmit`');
 }
